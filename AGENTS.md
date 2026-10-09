@@ -216,13 +216,16 @@ Outputs to `public/` (gitignored). Never commit `public/`, `resources/`,
 checkout → Go 1.23 → Node 20 → Hugo 0.160.1 Extended → `npm install` →
 `hugo --gc --minify --printPathWarnings` → deploy artifact.
 
-**One-time setup on her GitHub account:**
+**One-time setup (already done on this machine):**
 
-1. Create repo **`LotusWuTT/LotusWuTT.github.io`** (public, empty).
-2. Push this project: `git remote add origin
-   https://github.com/LotusWuTT/LotusWuTT.github.io.git && git push -u origin main`.
+1. ~~Create repo `LotusWuTT/LotusWuTT.github.io`~~ — done.
+2. The remote is set to `git@github-lotus:LotusWuTT/LotusWuTT.github.io.git`.
+   `github-lotus` is an alias in `~/.ssh/config` that forces the dedicated
+   key `~/.ssh/id_ed25519_lotus` (added as a **write-enabled deploy key**
+   on the repo — repo-scoped, not an account key). Plain `git push origin
+   main` from this machine just works.
 3. Repo Settings → Pages → **Source: "GitHub Actions"** (not "Branch").
-4. First deploy takes a minute; then `https://lotuswutt.github.io/` is live.
+4. First deploy confirmed 2026-10-09; site live at `https://lotuswutt.github.io/`.
 
 **CRITICAL:** Pages Source must be "GitHub Actions". If it flips back to a
 branch, the site serves Jekyll output instead.
@@ -308,8 +311,8 @@ git add -A && git commit -m "<what changed>" && git push origin main
 
 | URL | What |
 |---|---|
-| `https://lotuswutt.github.io/` | Production site (after first deploy) |
-| `https://github.com/LotusWuTT/LotusWuTT.github.io` | Target repo (create it) |
+| `https://lotuswutt.github.io/` | Production site (live since 2026-10-09) |
+| `https://github.com/LotusWuTT/LotusWuTT.github.io` | Repo (deploys on push to main) |
 | `https://github.com/LotusWuTT` | Her GitHub account |
 | `https://orcid.org/0009-0009-7224-6978` | Her ORCID |
 
