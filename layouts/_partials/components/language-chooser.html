@@ -1,0 +1,41 @@
+{{ $page := .page }}
+{{ $zhURL := "" }}
+{{ $enURL := "" }}
+
+{{ range hugo.Sites }}
+  {{ if eq .Language.Lang "zh" }}
+    {{ $zhURL = .Home.RelPermalink }}
+  {{ else if eq .Language.Lang "en" }}
+    {{ $enURL = .Home.RelPermalink }}
+  {{ end }}
+{{ end }}
+
+{{ if eq $page.Lang "zh" }}
+  {{ $zhURL = $page.RelPermalink }}
+{{ else if eq $page.Lang "en" }}
+  {{ $enURL = $page.RelPermalink }}
+{{ end }}
+
+{{ range $page.Translations }}
+  {{ if eq .Lang "zh" }}
+    {{ $zhURL = .RelPermalink }}
+  {{ else if eq .Lang "en" }}
+    {{ $enURL = .RelPermalink }}
+  {{ end }}
+{{ end }}
+
+{{ if and $zhURL $enURL }}
+  <div class="language-segment" role="group" aria-label="{{ i18n "languages" }}">
+    {{ if eq $page.Lang "zh" }}
+      <span class="language-segment__item is-active" aria-current="page">中文</span>
+    {{ else }}
+      <a class="language-segment__item" href="{{ $zhURL }}" lang="zh-CN" hreflang="zh-CN">中文</a>
+    {{ end }}
+    <span class="language-segment__divider" aria-hidden="true">/</span>
+    {{ if eq $page.Lang "en" }}
+      <span class="language-segment__item is-active" aria-current="page">EN</span>
+    {{ else }}
+      <a class="language-segment__item" href="{{ $enURL }}" lang="en" hreflang="en">EN</a>
+    {{ end }}
+  </div>
+{{ end }}

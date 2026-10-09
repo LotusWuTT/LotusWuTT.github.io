@@ -1,0 +1,4 @@
+# Navigation is language-specific and lives in languages.yaml.
+# Keep this file as an empty fallback to avoid merging a bilingual menu into
+# both language editions.
+main: []

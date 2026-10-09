@@ -1,0 +1,24 @@
+build:
+  hugo_version: '0.162.0'
+deploy:
+  # Deployment target: github-pages, netlify, vercel, cloudflare, or none
+  host: 'github-pages'
+template:
+  id: "academic-cv"
+  name: "Academic CV"
+
+# === Web Identity ===
+baseURL: 'https://lotuswutt.github.io/'
+title: 'Tingting Wu · Pediatrics & Omics Notes'
+defaultContentLanguage: 'zh'
+defaultContentLanguageInSubdir: false
+hasCJKLanguage: true
+
+# === Descriptions ===
+params:
+  description: |
+    Tingting Wu — Undergraduate medical student (Clinical Medicine, Pediatrics track)
+    at the University of South China. Pediatric precision medicine, biomedical
+    multi-omics data analysis, and structured reading notes on frontier medicine.
+  keywords: ['Pediatrics', 'precision medicine', 'multi-omics', 'bioinformatics', 'Tingting Wu']
+  author: 'Tingting Wu'

@@ -1,0 +1,97 @@
+schema: hugoblox/author/v1
+slug: tingting-wu
+is_owner: true
+name:
+  display: Tingting Wu
+  given: Tingting
+  family: Wu
+  alternate: 吴亭亭
+  pronunciation: 'Wú Tíngtíng'
+  pronouns: she/her
+postnominals: []
+status:
+  icon: "🌱"
+role: 'Medical Student · Pediatrics & Biomedical Data Analysis'
+bio: |
+  I am an undergraduate medical student (Clinical Medicine, Pediatrics
+  track; enrolled September 2024) at the School of Medicine, University of
+  South China. I believe pediatrics is not "internal medicine for small
+  adults": children's diseases unfold against a constantly developing
+  body, and understanding them increasingly means reading molecular and
+  multi-omics evidence alongside the bedside.
+
+  With hands-on experience in computational processing of biomedical omics
+  data, I try to connect clinical questions with analysis tools: turning
+  claims in the literature into reproducible code and re-checkable
+  evidence, rather than stopping at "the paper says so". I read frontier
+  medicine systematically — pediatric precision medicine, single-cell and
+  spatial multi-omics, and AI-assisted diagnostics — and keep structured
+  notes so that each reading leaves a verifiable trace.
+
+  我是南华大学临床医学专业 2024 级本科生（儿科方向）。我一直相信，儿科
+  不是"缩小版的内科"：儿童疾病发生在一个不断发育的身体里，理解它们，
+  越来越意味着要在床旁之外，同时读懂分子与多组学层面的证据。
+
+  我有一定的生物组学数据计算处理经验，因此习惯把临床问题与分析工具
+  连接起来：把文献里的结论还原成可复现的代码与可核查的证据，而不是
+  停在"论文这么说"。我系统地阅读前沿医学文献——儿童精准医疗、单细胞
+  与空间多组学、AI 辅助诊断——并用结构化笔记让每一次阅读都留下可检验
+  的痕迹。
+
+affiliations:
+  - name: University of South China (School of Medicine)
+    url: https://www.usc.edu.cn/
+
+links:
+  - icon: brands/github
+    url: https://github.com/LotusWuTT
+    label: GitHub
+  - icon: academicons/orcid
+    url: https://orcid.org/0009-0009-7224-6978
+    label: ORCID
+
+interests:
+  - Pediatrics & child health
+  - Pediatric precision medicine
+  - Biomedical multi-omics data analysis
+  - Single-cell & spatial transcriptomics (applications)
+  - Critical reading of medical literature
+
+education: []
+
+experience:
+  - role: Biomedical omics data analysis practice
+    org: School of Medicine, University of South China
+    start: 2024-09-01
+    summary: |
+      Hands-on computational practice with biological omics datasets:
+      preprocessing, quality control, and exploratory analysis of
+      transcriptomic data, kept as reproducible scripts and notes.
+
+skills:
+  - name: Research
+    items:
+      - label: Literature reading & critical appraisal
+        level: 4
+      - label: Multi-omics data processing
+        level: 3
+      - label: Scientific note-taking & writing
+        level: 3
+  - name: Computing
+    items:
+      - label: R / Python for data analysis
+        level: 3
+      - label: Omics QC & exploratory analysis
+        level: 3
+      - label: Literature management (Zotero)
+        level: 4
+
+languages:
+  - name: Chinese
+    level: 5
+    label: Native
+  - name: English
+    level: 4
+    label: Fluent academic reading
+
+awards: []

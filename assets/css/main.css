@@ -1,0 +1,499 @@
+/* Tailwind CSS v4 and the Hugo Blox component stack. */
+@import "tailwindcss";
+@import "config/tailwind.css";
+@import "config/theme.css";
+@import "framework/base.css";
+@import "color-utilities.css";
+@import "layout-utilities.css";
+@import "framework/components.css";
+@import "components/all.css";
+@import "views/all.css";
+@import "chroma.css";
+@import "hb-search.css";
+@import "animations.css";
+@import "config/safelist.css";
+
+@layer base {
+  :root {
+    --tt-paper: #fbfbf9;
+    --tt-paper-muted: #f4f5f2;
+    --tt-ink: #18181b;
+    --tt-rule: #d9ddd8;
+    --tt-accent-warm: #9d174d;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: var(--tt-paper) !important;
+    color: var(--tt-ink);
+    letter-spacing: 0;
+  }
+
+  .dark body {
+    --tt-paper: #111312;
+    --tt-paper-muted: #181b19;
+    --tt-ink: #f4f4f3;
+    --tt-rule: #343a36;
+    --tt-accent-warm: #f9a8d4;
+  }
+
+  .page-header nav {
+    background: color-mix(in srgb, var(--tt-paper) 94%, transparent) !important;
+    border-bottom: 1px solid var(--tt-rule);
+    box-shadow: none !important;
+    backdrop-filter: blur(14px);
+  }
+
+  .page-header nav > div {
+    width: 100%;
+    max-width: 84rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  .page-header nav a {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .global-language-switch {
+    position: absolute;
+    top: 50%;
+    right: max(1.25rem, calc((100vw - 84rem) / 2 + 1.25rem));
+    z-index: 2;
+    transform: translateY(-50%);
+  }
+
+  .page-header .language-segment {
+    display: inline-flex;
+    width: auto;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.45rem;
+    border: 1px solid var(--tt-rule);
+    border-radius: 0.25rem;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none;
+  }
+
+  .page-header .language-segment__item {
+    color: #71717a;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+
+  .page-header .language-segment__item.is-active {
+    color: var(--tt-ink);
+  }
+
+  .page-header .language-segment__item:not(.is-active):hover,
+  .page-header .language-segment__item:not(.is-active):focus-visible {
+    color: #9d174d;
+  }
+
+  .page-header .language-segment__divider {
+    color: #a1a1aa;
+    font-size: 0.7rem;
+  }
+
+  .hbb-section {
+    border-top: 1px solid var(--tt-rule);
+  }
+
+  #about {
+    border-top: 0;
+  }
+
+  [class~="max-w-7xl"] {
+    max-width: 84rem !important;
+    padding-inline: 1.5rem !important;
+  }
+
+  .resume-biography {
+    padding-block: 4.75rem 4.25rem !important;
+  }
+
+  .resume-biography .grid {
+    column-gap: 4.5rem !important;
+  }
+
+  .resume-biography .grid > div:first-child {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .resume-biography h1 {
+    font-weight: 700 !important;
+  }
+
+  .resume-biography h1 rt {
+    color: #71717a;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.2em;
+    font-weight: 500;
+  }
+
+  .resume-biography .grid > div:first-child .text-2xl {
+    color: var(--tt-accent-warm) !important;
+    font-size: 1rem !important;
+    font-weight: 650 !important;
+    line-height: 1.5;
+  }
+
+  .resume-biography .grid > div:first-child .text-lg {
+    font-size: 0.925rem !important;
+  }
+
+  .resume-biography .grid > div:first-child > div:last-child {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .resume-biography .grid > div:first-child > div:last-child a {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    border: 1px solid var(--tt-rule) !important;
+    border-radius: 0.25rem !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .resume-biography .grid > div:last-child > div:first-child {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .resume-biography .grid > div:last-child > div:first-child > .flex {
+    margin-bottom: 1.35rem !important;
+  }
+
+  .resume-biography .grid > div:last-child > div:first-child > .flex > div {
+    display: none;
+  }
+
+  .resume-biography .grid > div:last-child h2 {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+  }
+
+  .resume-biography .prose,
+  .resume-biography .prose-lg {
+    max-width: 68ch !important;
+  }
+
+  .resume-biography .bio-text {
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  .resume-biography .bio-text p:first-child::first-letter {
+    color: var(--tt-accent-warm);
+    font-family: ui-serif, Georgia, serif;
+    font-size: 2.9rem;
+    font-weight: 600;
+    line-height: 0.8;
+    margin-right: 0.1em;
+  }
+
+  .resume-biography .grid > div:last-child > div:last-child > .flex {
+    margin-bottom: 1rem !important;
+  }
+
+  html[lang="zh-CN"] .resume-biography .grid > div:last-child > div:last-child {
+    display: none;
+  }
+
+  .resume-biography .grid > div:last-child > div:last-child > .flex > div {
+    display: none;
+  }
+
+  .resume-biography .grid > div:last-child > div:last-child h3 {
+    font-size: 0.875rem !important;
+    text-transform: uppercase;
+  }
+
+  .resume-biography .grid > div:last-child > div:last-child span {
+    border: 0 !important;
+    border-bottom: 1px solid var(--tt-rule) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    padding: 0.35rem 0 !important;
+    font-size: 0.825rem !important;
+    font-weight: 600 !important;
+  }
+
+  #now > .flex,
+  #research > .flex,
+  #contact > .flex,
+  html[lang="en"] #writing > .flex {
+    max-width: 84rem !important;
+    align-items: flex-start;
+    padding: 4rem 1.5rem;
+  }
+
+  #now > .flex > :first-child,
+  #research > .flex > :first-child,
+  #contact > .flex > :first-child,
+  html[lang="en"] #writing > .flex > :first-child {
+    margin-bottom: 0.75rem !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+  }
+
+  #now .prose,
+  #research .prose,
+  #contact .prose,
+  html[lang="en"] #writing .prose {
+    width: 100%;
+    max-width: 72ch !important;
+    font-size: 1rem !important;
+    line-height: 1.8;
+  }
+
+  #now {
+    background: var(--tt-paper-muted);
+  }
+
+  #now .prose {
+    max-width: none !important;
+  }
+
+  #now .prose ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #now .prose li {
+    margin: 0;
+    padding-top: 1rem;
+    border-top: 2px solid var(--tt-ink);
+  }
+
+  #now .prose li::marker {
+    content: "";
+  }
+
+  #research .prose p:first-child {
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    font-size: 1.3rem;
+    line-height: 1.65;
+  }
+
+  #contact {
+    background: var(--tt-paper-muted);
+  }
+
+  #contact .prose a,
+  html[lang="en"] #writing .prose a {
+    text-underline-offset: 0.2em;
+  }
+
+  #writing > .flex.flex-col.items-center.max-w-prose {
+    max-width: 84rem !important;
+    align-items: flex-start;
+    padding: 4rem 1.5rem 1rem !important;
+  }
+
+  #writing > .flex.flex-col.items-center.px-6 {
+    align-items: stretch;
+    padding: 0 1.5rem 4rem;
+  }
+
+  #writing .container {
+    width: 100%;
+    max-width: 84rem !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 2rem;
+    row-gap: 2.5rem;
+  }
+
+  #writing h2 {
+    font-size: 1.65rem !important;
+  }
+}
+
+@layer components {
+  .academic-card {
+    display: flex;
+    min-height: 20rem;
+    flex-direction: column;
+    padding: 1.5rem 0 0;
+    border-top: 2px solid var(--tt-ink);
+    background: transparent;
+  }
+
+  .academic-card__topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: #71717a;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .academic-card__tag {
+    color: var(--tt-accent-warm);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .academic-card__title {
+    min-height: 3.5rem;
+    margin-top: 1.25rem;
+    color: var(--tt-ink);
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: 650;
+    line-height: 1.3;
+  }
+
+  .academic-card__title a {
+    text-decoration: none;
+  }
+
+  .academic-card__title a:hover,
+  .academic-card__title a:focus-visible {
+    color: #9d174d;
+  }
+
+  .dark .academic-card__title a:hover,
+  .dark .academic-card__title a:focus-visible {
+    color: #f9a8d4;
+  }
+
+  .academic-card__summary {
+    display: -webkit-box;
+    margin-top: 1rem;
+    overflow: hidden;
+    color: #52525b;
+    font-size: 0.925rem;
+    line-height: 1.7;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+
+  .dark .academic-card__summary {
+    color: #a1a1aa;
+  }
+
+  .academic-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: auto;
+    padding-block: 1.25rem;
+    border-bottom: 1px solid var(--tt-rule);
+    color: #71717a;
+    font-size: 0.75rem;
+  }
+
+  .academic-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #9d174d;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .dark .academic-card__link {
+    color: #f9a8d4;
+  }
+
+  .academic-card__link svg {
+    transition: transform 160ms ease;
+  }
+
+  .academic-card__link:hover svg,
+  .academic-card__link:focus-visible svg {
+    transform: translateX(0.2rem);
+  }
+}
+
+@media (max-width: 767px) {
+  @layer base {
+    .global-language-switch {
+      right: 1rem;
+    }
+
+    .resume-biography {
+      padding-block: 3.25rem !important;
+    }
+
+    .resume-biography .grid {
+      row-gap: 3rem !important;
+    }
+
+    .resume-biography .grid > div:first-child {
+      width: 100%;
+    }
+
+    .resume-biography .grid > div:last-child h2 {
+      font-size: 0.9rem !important;
+    }
+
+    #now > .flex,
+    #research > .flex,
+    #contact > .flex,
+    html[lang="en"] #writing > .flex {
+      padding-block: 3rem;
+    }
+
+    #now .prose ul {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    #research .prose p:first-child {
+      font-size: 1.15rem;
+    }
+
+    #writing > .flex.flex-col.items-center.max-w-prose {
+      padding-block: 3rem 0.5rem !important;
+    }
+
+    #writing > .flex.flex-col.items-center.px-6 {
+      padding-bottom: 3rem;
+    }
+
+    #writing .container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @layer components {
+    .academic-card {
+      min-height: 0;
+    }
+
+    .academic-card__title {
+      min-height: 0;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .academic-card__link svg {
+    transition: none;
+  }
+}

@@ -1,0 +1,57 @@
+# Languages
+# The Chinese and English homepages are maintained as translations with the
+# same section IDs so navigation and the language chooser stay predictable.
+
+zh:
+  locale: zh-CN
+  languageCode: zh-CN
+  contentDir: content
+  languageName: 简体中文
+  weight: 1
+  title: 'Tingting Wu · 儿科医学与组学笔记'
+  params:
+    description: '吴亭亭（Tingting Wu），南华大学临床医学专业 2024 级本科生（儿科方向）。关注儿科疾病与儿童精准医学、生物组学数据计算处理，以及可核查的前沿医学文献阅读。'
+    hugoblox:
+      locale:
+        date_format: '2006-01-02'
+  menus:
+    main:
+      - name: 简介
+        url: /#about
+        weight: 10
+      - name: 方向
+        url: /#research
+        weight: 20
+      - name: 文章
+        url: /#writing
+        weight: 30
+      - name: 发表
+        url: /publications/
+        weight: 40
+
+en:
+  locale: en-US
+  languageCode: en-US
+  contentDir: content
+  languageName: English
+  weight: 2
+  title: 'Tingting Wu · Pediatrics & Omics Notes'
+  params:
+    description: 'Tingting Wu is an undergraduate medical student (Class of 2024, Clinical Medicine — Pediatrics track) at the University of South China, Hengyang. She works on biomedical multi-omics data analysis and keeps structured reading notes on frontier medicine.'
+    hugoblox:
+      locale:
+        date_format: 'Jan 2, 2006'
+  menus:
+    main:
+      - name: Profile
+        url: /en/#about
+        weight: 10
+      - name: Interests
+        url: /en/#research
+        weight: 20
+      - name: Writing
+        url: /en/#writing
+        weight: 30
+      - name: Publications
+        url: /en/publications/
+        weight: 40
